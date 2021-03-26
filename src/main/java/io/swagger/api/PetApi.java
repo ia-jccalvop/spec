@@ -34,7 +34,7 @@ import javax.validation.constraints.*;
 import java.util.List;
 import java.util.Map;
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.SpringCodegen", date = "2021-03-26T15:59:15.943Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.SpringCodegen", date = "2021-03-26T16:08:33.426Z[GMT]")
 public interface PetApi {
 
     @Operation(summary = "Add a new pet to the store", description = "", security = {
@@ -67,7 +67,7 @@ public interface PetApi {
         @ApiResponse(responseCode = "200", description = "successful operation", content = @Content(array = @ArraySchema(schema = @Schema(implementation = Pet.class)))),
         
         @ApiResponse(responseCode = "400", description = "Invalid status value") })
-    @RequestMapping(value = "/pet/status",
+    @RequestMapping(value = "/pet/statusByPet",
         produces = { "application/xml", "application/json" }, 
         method = RequestMethod.GET)
     ResponseEntity<List<Pet>> findPetsByStatus(@NotNull @Parameter(in = ParameterIn.QUERY, description = "Status values that need to be considered for filter" ,required=true,schema=@Schema(allowableValues={ "available", "pending", "sold" }
